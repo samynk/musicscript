@@ -1,0 +1,52 @@
+score pasko{
+    title="Pasko na naman";
+    lyricist="Levi Celerio";
+    divisions=24;
+    part soprano{
+        name="Soprano";
+        shortname="S.";
+        octave = 4;
+        voice 1{
+            | &G2 fifths-5 %4/4 fa/6 fa/5. fa/4 @"ko na na-" 
+            | fa r fa fa @"man, o, kay"
+            | fa/5. fa/4 fa sol @"tu-lin ng a-"
+            | fa/6 r fa @"raw, Pas-"
+            | =la/6 si/5. do+1/4 @"kong nag-da"
+            | =la r la/5. si/4 @"an ti-la"
+            | do+1 =la si do+1 @"ba kung kai-lan"
+            | re+1/6 r fa @"lang; Nga-"
+            | fa/6 fa fa @"yon ay Pas-"
+            | fa/6 fa fa @"kong da-pat"
+            | la/5. si/4 -do+1 do+1 @"pa-sa-la-ma"
+            | si/6 @"tan."
+            | r/7
+            | r/7
+            | r/7
+            |
+        }
+    }
+
+    part alt{
+        name="Alt";
+        shortname="A.";
+        octave = 4;
+        voice 1{
+            | &G2 fifths-5 %4/4 re/6 re/5. fa/4 @"ko na na-" 
+            | re r si-1 do @"man, o, kay"
+            | re/5. mi/4 re do @"tu-lin ng a-"
+            | do/6 r fa @"raw, Pas-"
+            | =la/6 si/5. do+1/4 @"kong nag-da"
+            | =la r la/5. si/4 @"an ti-la"
+            | do+1 =la si do+1 @"ba kung kai-lan"
+            | re+1/6 r fa @"lang; Nga-"
+            | re/6 re fa @"yon ay Pas-"
+            | re/6 re re @"kong da-pat"
+            | fa/5. fa/4 =re =re @"pa-sa-la-ma"
+            | mi/6 @"tan."
+            | r/7
+            | r/7
+            | r/7
+            |
+        }
+    }
+}

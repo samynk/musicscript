@@ -1,0 +1,189 @@
+score pasko{
+    title="Carol of the Bells";
+    lyricist="Levi Celerio";
+    divisions=24;
+    part soprano{
+        name="Soprano";
+        shortname="S.";
+        octave = 4;
+        voice 1{
+            | &G2 fifths-2 %3/4 =si/5 [la si]/4 sol/5 @"Hark! are the bells,"
+            | si/5 [la si]/4 sol/5 @"sweet sil-ver bells,"
+            | si/5 [la si]/4 sol/5 @"All seem to say,"
+            | si/5 [la si]/4 sol/5 @"throw cares a-way,"
+            | si/5 [la si]/4 sol/5 @"Christ-mas is here,"
+            | si/5 [la si]/4 sol/5 @"bring-ing good cheer."
+            | si/5 [la si]/4 sol/5 @"To young and old,"
+            | si/5 [la si]/4 sol/5 @"meek and the bold."
+            | si/5 [la si]/4 sol/5 @"Ding, dong, ding, dong,"
+            | si/5 [la si]/4 sol/5 @"that is their song,"
+            | si/5 [la si]/4 sol/5 @"With joy-ful ring,"
+            | si/5 [la si]/4 sol/5 @"all car-ol-ing"
+            | si/5 [la si]/4 sol/5 @"One seems to hear,"
+            | si/5 [la si]/4 sol/5 @"words of good cheer,"
+            | si/5 [la si]/4 sol/5 @"from eve-ry-where,"
+            | si/5 [la si]/4 sol/5 @"fill-ing the air,"
+            | re+1/5 [do+1 re+1]/4 si/5 @"O, how they pound,"
+            | re+1/5 [do+1 re+1]/4 si/5 @"rais-ing their sound."
+            | re+1/5 [do+1 re+1]/4 si/5 @"O'er her and there,"
+            | re+1/5 [do+1 re+1]/4 si/5 @"tell-ing their tale."
+            | sol+1/5 [sol+1 sol+1]/4 [fa+1 mi+1]/4 @"Gay-ly - they ring,"
+            | re+1/5 [re+1 re+1]/4 [do+1 si]/4 @"while peo-ple sing."
+            | do+1/5 [do+1 do+1]/4 [re+1 do+1]/4 @"Songs of good che-er."
+            | si [la si]/4 sol @"Christ-mas is here."
+            | [re =mi +fa sol =la si]/4 @"Mer-ry, mer-ry, mer-ry,"
+            | [do+1 re+1]/4 do+1 si @"mer-ry Christ-mas."
+            | [re =mi +fa sol =la si]/4 @"Mer-ry, mer-ry, mer-ry,"
+            | [do+1 re+1]/4 do+1 si @"mer-ry Christ-mas." 
+            | si/5 [la si]/4 sol/5 @"Come, on they send,"
+            | si/5 [la si]/4 sol/5 @"on with-out end."
+            | si/5 [la si]/4 sol/5 @"Their joy-ful tone,"
+            | si/5 [la si]/4 sol/5 @"to ev-ery home."
+            | sol/6. @"Ding"
+            | sol/6. @"Dong"
+            | sol/6. @"Ding"
+            | sol/6. @"Ding"
+            | sol/6.
+            |
+        }
+    }
+
+    part alt{
+        name="Alt";
+        shortname="A.";
+        octave = 4;
+        voice 1{
+            | &G2 fifths-2 %3/4 r/6. 
+            | r/6. 
+            | r/6. 
+            | r/6. 
+            | r/6. 
+            | r/6. 
+            | r/6. 
+            | r/6. 
+            | sol/6. @"Ding"
+            | fa/6. @"Dong"
+            | mi/6. @"Ding"
+            | re/6. @"Dong" 
+            | sol/5 [sol sol]/4 sol/5 @"One seems to hear,"
+            | sol/5 [sol sol]/4 sol/5 @"words of good cheer,"
+            | sol/5 [sol sol]/4 sol/5 @"from eve-ry-where,"
+            | sol/5 [sol sol]/4 sol/5 @"fill-ing the air,"
+            | si/5 [la si]/4 sol/5 @"O, how they pound,"
+            | si/5 [la si]/4 sol/5 @"rais-ing their sound."
+            | si/5 [la si]/4 sol/5 @"O'er her and there,"
+            | si/5 [la si]/4 sol/5 @"tell-ing their tale."
+            | re+1 [re+1 re+1]/4 [re+1 do+1]/4 @"Gay-ly - they ring,"
+            | si [si si]/4 [la sol]/4 @"while peop-ple sing. -"
+            | sol [sol sol]/4 [si la]/4 @"Songs of good che-er"
+            | sol [la sol]/4 re @"Christ-mas is here."
+            | re/6. @"Ding"
+            | =mi +fa sol @"- - -"
+            | re/6. @"Ding"
+            | =mi +fa sol @"- - -"
+            | r/6.
+            | r/6.
+            | fa/6. @"Ding"
+            | mi/6. @"Ding"
+            | re/6. @"Dong"
+            | re/6.
+            | re/6.
+            | re/6.
+            | re/6.
+            |
+        }
+    }
+
+    part tenor{
+        name="Tenor";
+        shortname="T.";
+        octave = 3;
+        octavechange = -1;
+        voice 1{
+            | &G2 fifths-2 %3/4 r/6. 
+            | r/6. 
+            | r/6. 
+            | r/6. 
+            | sol+1/6. @"Ding"
+            | fa+1/6. @"Dong"
+            | mi+1/6. @"Ding"
+            | re+1/6. @"Dong" 
+            | mi+1/6. @"Ding"
+            | re+1/6. @"Dong"
+            | do+1/6. @"Ding"
+            | si/6. @"Dong" 
+            | do+1/5 [do+1 do+1]/4 do+1/5 @"One seems to hear,"
+            | re+1/5 [re+1 re+1]/4 re+1/5 @"words of good cheer,"
+            | mi+1/5 [mi+1 mi+1]/4 mi+1/5 @"from eve-ry-where,"
+            | si/5 [si si]/4 si/5 @"fill-ing the air,"
+            | re+1/6. @"O,"
+            | =mi+1/6. @"-"
+            | fa+1/5 mi+1/5 re+1/5 @"how - they"
+            | [sol+1 fa+1]/4 mi+1/5 re+1/5 @"pound. - - -"
+            | re+1 [re+1 re+1]/4 re+1 @"Gay-ly - they"
+            | re+1 [do+1 re+1]/4 si @"while peop-ple sing. -"
+            | mi+1 [mi+1 mi+1]/4 mi+1 @"Songs of good cheer"
+            | re+1 [re+1 re+1]/4 re+1 @"Christ-mas is here."
+            | si [la si]/4 sol @"Ding dong-y dong,"
+            | si [la si]/4 sol @"That is their song,"
+            | si [la si]/4 sol @"with joy-ful ring,"
+            | si [la si]/4 sol @"all car-ol-ing"
+            | sol/6. @"Ding"
+            | sol/6. @"Dong"
+            | sol/6. @"Ding"
+            | sol/6. @"Ding"
+            | si/5 [la si]/4 sol/5 @"Come, on they send,"
+            | si/5 [la si]/4 sol/5 @"on with-out end."
+            | si/5 [la si]/4 sol/5 @"Their joy-ful tone,"
+            | si/5 [la si]/4 sol/5 @"to ev-ery home."
+            | sol/6.
+            |
+        }
+    }
+
+    part bass{
+        name="Bass";
+        shortname="B.";
+        octave = 3;
+        voice 1{
+            | &F4 fifths-2 %3/4 r/6. 
+            | r/6. 
+            | r/6. 
+            | r/6. 
+            | r/6. 
+            | r/6. 
+            | r/6. 
+            | r/6. 
+            | r/6. 
+            | r/6. 
+            | r/6. 
+            | r/6.
+            | mi/5 [mi mi]/4 mi/5 @"One seems to hear,"
+            | sol/5 [sol sol]/4 sol/5 @"words of good cheer,"
+            | do/5 [do do]/4 do/5 @"from eve-ry-where,"
+            | mi/5 [mi mi]/4 mi/5 @"fill-ing the air,"
+            | sol/5 [sol sol]/4 sol/5 @"O, how they pound,"
+            | sol/5 [sol sol]/4 sol/5 @"rais-ing their sound."
+            | sol/5 [sol sol]/4 sol/5 @"O'er her and there,"
+            | sol/5 [sol sol]/4 sol/5 @"tell-ing their tale."
+            | si [la si]/4 sol @"Gay-ly - they"
+            | si [la si]/4 sol @"while peop-ple sing. -"
+            | si [la si]/4 sol @"Songs of good cheer"
+            | si [la si]/4 sol @"Christ-mas is here."
+            | re/6. @"Ding"
+            | re/6.
+            | re/6. @"Ding"
+            | re/6.
+            | =fa/6. @"Ding"
+            | mi/6. @"Dong"
+            | re/6. @"Ding"
+            | do/6. @"Ding"
+            | sol/6. @"Dong"
+            | sol/6. 
+            | sol/6.
+            | sol/6. 
+            | sol/6.
+            |
+        }
+    }
+}
