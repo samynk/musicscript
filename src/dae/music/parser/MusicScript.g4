@@ -12,7 +12,7 @@ note: alteration? NOTE octave? duration?;
 notegroup: NOTEGROUPSTART note* NOTEGROUPEND duration?;
 lyrics: LYRICS STRING;
 alteration: PLUS|MINUS|EQUAL;
-octave: (PLUS|MINUS) INT;
+octave: (PLUS|MINUS) (INT)?;
 duration: DURATION INT;
 property: ID EQUAL (STRING|(PLUS|MINUS)?INT|BOOLEAN) SC;
 clef: CLEF ID;
