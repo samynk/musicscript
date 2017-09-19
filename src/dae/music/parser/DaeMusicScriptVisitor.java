@@ -24,11 +24,9 @@ import org.antlr.v4.runtime.tree.ParseTree;
  * @author Koen.Samyn
  */
 public class DaeMusicScriptVisitor extends MusicScriptBaseVisitor {
+
     Pattern lyricSplitter = Pattern.compile("(?<=[-])|[ ]");
-    
-    
-   
-    
+
     @Override
     public Object visitScore(MusicScriptParser.ScoreContext ctx) {
         Score score = new Score();
@@ -74,10 +72,10 @@ public class DaeMusicScriptVisitor extends MusicScriptBaseVisitor {
         if (ctx.clef() != null) {
             m.setClef(ctx.clef().getText());
         }
-        
-        if (ctx.fifths() != null){
+
+        if (ctx.fifths() != null) {
             int fifths = Integer.parseInt(ctx.fifths().INT().getText());
-            if ( ctx.fifths().MINUS() != null){
+            if (ctx.fifths().MINUS() != null) {
                 fifths = -fifths;
             }
             Key k = Key.createFifths(fifths);
@@ -90,28 +88,26 @@ public class DaeMusicScriptVisitor extends MusicScriptBaseVisitor {
             m.setTime(beat, beatType);
         }
 
-        for(int i = 0; i < ctx.getChildCount(); ++i){
+        for (int i = 0; i < ctx.getChildCount(); ++i) {
             ParseTree c = ctx.getChild(i);
-            if ( c instanceof NoteContext){
-                m.addNote(visitNote((NoteContext)c));
-            }else if (c instanceof NotegroupContext){
-                m.addNotes(visitNotegroup((NotegroupContext)c));
+            if (c instanceof NoteContext) {
+                m.addNote(visitNote((NoteContext) c));
+            } else if (c instanceof NotegroupContext) {
+                m.addNotes(visitNotegroup((NotegroupContext) c));
             }
         }
-        
-        List<String> lyrics 
-                = ctx.lyrics().stream().map(l ->visitLyrics(l)).collect(Collectors.toList());
-        
-        for ( String s : lyrics)
-        {
-            
-           String[] syllables = lyricSplitter.split(s.substring(1,s.length()-1));
-           int max = Math.min(syllables.length, m.getNumberOfNotes());
-           for ( int i = 0; i < max; ++i)
-           {               
-               Note n = m.getNote(i);
-               n.addLyric(syllables[i]);
-           }
+
+        List<String> lyrics
+                = ctx.lyrics().stream().map(l -> visitLyrics(l)).collect(Collectors.toList());
+
+        for (String s : lyrics) {
+
+            String[] syllables = lyricSplitter.split(s.substring(1, s.length() - 1));
+            int max = Math.min(syllables.length, m.getNumberOfNotes());
+            for (int i = 0; i < max; ++i) {
+                Note n = m.getNote(i);
+                n.addLyric(syllables[i]);
+            }
         }
         return m;
     }
@@ -131,8 +127,8 @@ public class DaeMusicScriptVisitor extends MusicScriptBaseVisitor {
         } else if (ctx.INT() != null) {
             IntProperty ip = new IntProperty(ctx.ID().getText());
             int value = Integer.valueOf(ctx.INT().getText());
-            if (ctx.MINUS() != null){
-                value = - value;
+            if (ctx.MINUS() != null) {
+                value = -value;
             }
             ip.setValue(value);
             return ip;
@@ -190,7 +186,10 @@ public class DaeMusicScriptVisitor extends MusicScriptBaseVisitor {
         // todo replace with default octave.
         int octave = 0;
         if (ctx.octave() != null) {
-            int rel = Integer.parseInt(ctx.octave().INT().getText());
+            int rel = 1;
+            if (ctx.octave().INT() != null) {
+                rel = Integer.parseInt(ctx.octave().INT().getText());
+            }
             if (ctx.octave().MINUS() != null) {
                 octave = -rel;
             } else {
@@ -203,10 +202,10 @@ public class DaeMusicScriptVisitor extends MusicScriptBaseVisitor {
         if (ctx.duration() != null) {
             String sdir = ctx.duration().INT().getText();
             int dotIndex = sdir.indexOf('.');
-            if ( dotIndex > -1){
-                type = Integer.parseInt(sdir.substring(0,dotIndex));
-                halfs = sdir.length()-dotIndex;
-            }else{
+            if (dotIndex > -1) {
+                type = Integer.parseInt(sdir.substring(0, dotIndex));
+                halfs = sdir.length() - dotIndex;
+            } else {
                 type = Integer.parseInt(sdir);
             }
         }
@@ -259,45 +258,45 @@ public class DaeMusicScriptVisitor extends MusicScriptBaseVisitor {
     public List<Note> visitNotegroup(NotegroupContext ctx) {
         List<Note> notes
                 = ctx.note().stream().map(n -> visitNote(n)).collect(Collectors.toList());
-        
-        if ( ctx.duration() != null ){
-            int type;
-            int halfs = 0;
+
+        int type = 0;
+        int halfs = 0;
+        boolean setDuration = false;
+        if (ctx.duration() != null) {
+            setDuration = true;
             String sdir = ctx.duration().INT().getText();
             int dotIndex = sdir.indexOf('.');
-            if ( dotIndex > -1){
-                type = Integer.parseInt(sdir.substring(0,dotIndex));
-                halfs = sdir.length()-dotIndex;
-            }else{
+            if (dotIndex > -1) {
+                type = Integer.parseInt(sdir.substring(0, dotIndex));
+                halfs = sdir.length() - dotIndex;
+            } else {
                 type = Integer.parseInt(sdir);
             }
-            
-            int i = 0;
-            int last = notes.size()-1;
-            for ( Note n: notes){
+        }
+
+        int i = 0;
+        int last = notes.size() - 1;
+        for (Note n : notes) {
+            if (setDuration) {
                 n.setNoteType(getNoteType(type));
                 n.setHalfs(halfs);
-                
-                if ( i == 0 ){
-                    n.startBeam();
-                }else if ( i == last){
-                    n.endBeam();
-                }else{
-                    n.continueBeam();
-                }
-                ++i;
             }
+
+            if (i == 0) {
+                n.startBeam();
+            } else if (i == last) {
+                n.endBeam();
+            } else {
+                n.continueBeam();
+            }
+            ++i;
         }
-        
         return notes;
     }
-    
-    
 
     @Override
     public String visitLyrics(MusicScriptParser.LyricsContext ctx) {
         return ctx.STRING().getText(); //To change body of generated methods, choose Tools | Templates.
     }
 
-    
 }
